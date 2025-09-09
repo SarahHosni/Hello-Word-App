@@ -18,4 +18,4 @@ EXPOSE 5000
 
 # Define the command to run the Flask app
 # We use 0.0.0.0 so it's accessible from outside the container
-CMD ["python", "app.py"]
+CMD ["python", "main.py"]
