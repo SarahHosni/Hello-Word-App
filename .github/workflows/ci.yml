@@ -29,7 +29,7 @@ jobs:
         run: python -m pytest
         # For now, we'll use a placeholder since you might not have tests.
         # Later, you can use pytest, unittest, etc.
-        run: echo "No Python tests defined, skipping..."
+        
 
   # 2. Build Stage (Docker) - This part stays mostly the same
   build:
