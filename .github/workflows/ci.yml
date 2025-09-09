@@ -27,7 +27,7 @@ jobs:
       - name: Run tests
         run: echo "No Python tests defined, skipping..."
 
-  # 2. Build Stage (Docker)
+  # 2. Build Stage 
   build:
     needs: test
     runs-on: ubuntu-latest
