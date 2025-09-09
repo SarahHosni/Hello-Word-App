@@ -1,5 +1,4 @@
 
-# File: .github/workflows/ci-cd-pipeline.yml
 
 name: CI/CD Pipeline for Flask Hello World App
 
