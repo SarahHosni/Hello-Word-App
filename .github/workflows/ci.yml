@@ -56,26 +56,4 @@ jobs:
           echo "✅ Build completed successfully!"
           echo "Image pushed to Docker Hub as: ${{ secrets.DOCKER_USERNAME }}/hello-world-app:latest"
 
-  # 3. Deploy Stage (Azure) - MANUAL TRIGGER
-  deploy:
-    needs: build # Waits for build to succeed
-    runs-on: ubuntu-latest
-    # This job will ONLY run if you manually trigger it from the GitHub Actions UI
-    if: github.event_name == 'workflow_dispatch' # <-- This is the key line for manual trigger
-
-    steps:
-      - name: Log in to Azure
-        uses: azure/login@v1
-        with:
-          creds: ${{ secrets.AZURE_CREDENTIALS }}
-
-      - name: Deploy to Azure Web App
-        uses: azure/webapps-deploy@v2
-        with:
-          app-name: 'YOUR_AZURE_WEBAPP_NAME' # <-- REPLACE THIS
-          images: '${{ secrets.DOCKER_USERNAME }}/hello-world-app:latest'
-
-      - name: Print deployment URL
-        run: |
-          echo "🚀 Application deployed successfully!"
-          echo "Visit your app at: https://YOUR_AZURE_WEBAPP_NAME.azurewebsites.net"
+  
